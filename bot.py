@@ -399,96 +399,321 @@ def main_menu_keyboard():
         ["📊 Брокерские счета", "🌟 Подписки"],
         ["📱 SIM-карты", "🎓 Курсы"],
         ["💰 Баланс", "📞 Связь с админом"],
-        ["🎁 Ежедневный бонус", "👤 Профиль"],
-        ["🏆 Рейтинги", "🛒 Мои покупки"]  # Новая кнопка
+        ["👤 Профиль"]
     ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
-# ====================== ОБНОВЛЕННЫЕ КУРСЫ С ССЫЛКАМИ ======================
+# ====================== ОБНОВЛЕННЫЕ КУРСЫ С ПРАВИЛЬНЫМИ ССЫЛКАМИ ======================
 COURSES = {
     "course_1": {
         "title": "🎨 Основы графического дизайна",
         "price": 50,
         "description": "Базовый курс по графическому дизайну для начинающих",
-        "link": "https://www.youtube.com/playlist?list=PLsN1dVlmYW53XYkAwa4Q87ikr5qepwdRM",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLsN1dVlmYW53XYkAwa4Q87ikr5qepwdRM"
+        "link": "https://www.youtube.com/playlist?list=PLrFZoKDwH7Ng6c7KHYdqjZ2keb5jzpZ0E",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLrFZoKDwH7Ng6c7KHYdqjZ2keb5jzpZ0E"
     },
     "course_2": {
         "title": "📸 Фотошоп с Нуля",
         "price": 100,
         "description": "Полный курс Adobe Photoshop для новичков",
-        "link": "https://www.youtube.com/playlist?list=PL_jKgaFUK_61p1yXULw7KPi6HGpyXKTWx",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PL_jKgaFUK_61p1yXULw7KPi6HGpyXKTWx"
+        "link": "https://www.youtube.com/playlist?list=PLWOT_kf44zD7ve4dwdhYd2VfgCSeYUcgS",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLWOT_kf44zD7ve4dwdhYd2VfgCSeYUcgS"
     },
     "course_3": {
         "title": "🐍 Python для начинающих",
         "price": 80,
         "description": "Полный курс Python с нуля - программирование для новичков",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvv6XVvo38T5YqoX_6BMvJh",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvv6XVvo38T5YqoX_6BMvJh"
+        "link": "https://www.youtube.com/playlist?list=PLDyJYA6aTY1lPWXBPk0gw6gR8fEtPDGKa",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLDyJYA6aTY1lPWXBPk0gw6gR8fEtPDGKa"
     },
     "course_4": {
         "title": "💻 JavaScript с нуля",
         "price": 120,
         "description": "Изучи JavaScript за 10 часов - полный курс для новичков",
-        "link": "https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT"
+        "link": "https://www.youtube.com/playlist?list=PLDyJYA6aTY1kJIwbYHzGOuvSMNTfqksmk",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLDyJYA6aTY1kJIwbYHzGOuvSMNTfqksmk"
     },
     "course_5": {
         "title": "🎬 Видеомонтаж в Premiere Pro",
         "price": 150,
         "description": "Профессиональный видеомонтаж в Adobe Premiere Pro с нуля",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK"
+        "link": "https://www.youtube.com/results?search_query=Premiere+Pro+полный+курс+на+русском+playlist",
+        "youtube_playlist": "https://www.youtube.com/results?search_query=Premiere+Pro+полный+курс+на+русском+playlist"
     },
     "course_6": {
         "title": "📱 Разработка мобильных приложений",
         "price": 180,
         "description": "Создание приложений для Android и iOS с нуля",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvyjJNjzc_1E6gd4E-tvFhR",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvyjJNjzc_1E6gd4E-tvFhR"
+        "link": "https://www.youtube.com/results?search_query=mobile+apps+playlist+Гоша+Дударь",
+        "youtube_playlist": "https://www.youtube.com/results?search_query=mobile+apps+playlist+Гоша+Дударь"
     },
     "course_7": {
         "title": "🌐 Веб-разработка HTML/CSS",
         "price": 70,
         "description": "Создание сайтов с нуля - HTML, CSS, основы верстки",
-        "link": "https://www.youtube.com/playlist?list=PLM6XATr8gcRl5n6vq7lS2vK6jXvJN4qKZ",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLM6XATr8gcRl5n6vq7lS2vK6jXvJN4qKZ"
+        "link": "https://www.youtube.com/playlist?list=PLdzeMLV8u_l4j9IITwTtiGJUiWQmO7YUB",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLdzeMLV8u_l4j9IITwTtiGJUiWQmO7YUB"
     },
     "course_8": {
         "title": "📊 Excel для бизнеса",
         "price": 90,
         "description": "Продвинутый Excel: формулы, графики, анализ данных",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK"
+        "link": "https://www.youtube.com/results?search_query=Excel+полный+курс+для+бизнеса+playlist",
+        "youtube_playlist": "https://www.youtube.com/results?search_query=Excel+полный+курс+для+бизнеса+playlist"
     },
     "course_9": {
         "title": "🎯 SMM и продвижение в соцсетях",
         "price": 130,
         "description": "Как продвигать бизнес в Instagram, VK, Telegram",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvyjJNjzc_1E6gd4E-tvFhR",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvyjJNjzc_1E6gd4E-tvFhR"
+        "link": "https://www.youtube.com/results?search_query=SMM+курс+для+начинающих+playlist",
+        "youtube_playlist": "https://www.youtube.com/results?search_query=SMM+курс+для+начинающих+playlist"
     },
     "course_10": {
         "title": "💰 Криптовалюты и блокчейн",
         "price": 200,
         "description": "Полный курс по криптовалютам, блокчейну и инвестициям",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK"
+        "link": "https://www.youtube.com/results?search_query=криптовалюты+блокчейн+курс+playlist",
+        "youtube_playlist": "https://www.youtube.com/results?search_query=криптовалюты+блокчейн+курс+playlist"
     },
     "course_11": {
         "title": "🎨 Figma для дизайнеров",
         "price": 110,
         "description": "Профессиональный дизайн интерфейсов в Figma с нуля",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvyjJNjzc_1E6gd4E-tvFhR",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHvyjJNjzc_1E6gd4E-tvFhR"
+        "link": "https://www.youtube.com/playlist?list=PLM2Q6lcZo4MexclJrYxA0Is42qWBBuHpB",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLM2Q6lcZo4MexclJrYxA0Is42qWBBuHpB"
     },
     "course_12": {
         "title": "🤖 Машинное обучение и AI",
         "price": 190,
         "description": "Введение в искусственный интеллект и машинное обучение",
-        "link": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK",
-        "youtube_playlist": "https://www.youtube.com/playlist?list=PLQAt0m1f9OHs8_ZeJ95fjK4dN3jAqO1qK"
+        "link": "https://www.youtube.com/playlist?list=PLA0M1Bcd0w8zxDIDOTQHsX68MCDOAJDtj",
+        "youtube_playlist": "https://www.youtube.com/playlist?list=PLA0M1Bcd0w8zxDIDOTQHsX68MCDOAJDtj"
+    }
+}
+
+# ====================== ВСЕ ЗАДАНИЯ И СЕРВИСЫ ======================
+TASK_DATA = {
+    "task_1": {
+        "title": "Лендинг с заданиями и наградами",
+        "link": "https://yandex.ru/project/browser/bonus/multioffer/affiliate_4prod?source=pWRP8eS1VsC2X59560&partner_string=P89XvN11U6RuE47077&cliddbro=14444288&clidmbro=14444289&cliddefault=14444291&clidpp=14444285",
+        "description": "Выполните задания и получите награды от Яндекса",
+        "category": "Задания"
+    },
+    "task_2": {
+        "title": "Яндекс.Браузер на ПК – до 500₽ за установку",
+        "link": "https://download.cdn.yandex.net/yandex-tag/weboffer/YandexDownloader.exe?partner=946133&yabrowser=y&yaqsearch=y&yahomepage=y&banerid=1314444296&clid1=14444293&clid5=14444286&clid6=14444287&clid8=14444284&hash=4665b8e76c413b00338cf14156dfe0ed&.exe",
+        "description": "Установите Яндекс.Браузер на ПК и получите до 500₽",
+        "category": "Задания"
+    },
+    "task_3": {
+        "title": "Яндекс.Браузер на смартфон – до 200₽",
+        "link": "https://redirect.appmetrica.yandex.com/serve/1038458303094476620?partner_id=831050&appmetrica_js_redirect=0&full=0&clid=14444292&banerid=1314444290",
+        "description": "Установите Яндекс.Браузер на смартфон и получите до 200₽",
+        "category": "Задания"
+    },
+    "task_4": {
+        "title": "Яндекс.Поиск – 15% дохода от рекламы",
+        "link": "https://ya.ru/search/?clid=14444295&text=",
+        "description": "Подключите поиск Яндекса и получайте 15% дохода от рекламы",
+        "category": "Задания"
+    },
+    "task_5": {
+        "title": "Яндекс.Приложение с Алисой – 150₽ за установку",
+        "link": "https://redirect.appmetrica.yandex.com/serve/1110515897115706063?clid=14444294&appmetrica_js_redirect=0",
+        "description": "Установите приложение Яндекс с Алисой и получите 150₽",
+        "category": "Задания"
+    },
+    "job_1": {
+        "title": "Яндекс.Курьер",
+        "link": "https://ya.cc/8Ro9Lk",
+        "description": "Требования: Телефон Android 7+ или iPhone, мед. книжка",
+        "category": "Работа"
+    },
+    "job_2": {
+        "title": "Стать партнёром Альфа-Банк",
+        "link": "https://svoy.alfabank.ru/ref/885537",
+        "description": "Доход 50 000–100 000 ₽ в месяц",
+        "category": "Работа"
+    },
+    "job_3": {
+        "title": "Брокер Альфа-Банк – ЗП 500-1 000 000₽",
+        "link": "https://alfabank.ru/make-money/investments/brokerskij-schyot/?platformId=alfapartners_msv_investment-ba_885537_3469359",
+        "description": "Требования: Понимание финансовых инструментов",
+        "category": "Работа"
+    },
+    "card_1": {
+        "title": "T-BANK Дебетовая карта Black 500₽",
+        "link": "https://tbank.ru/baf/AGH0q6iLOEi",
+        "description": "Оформите карту и получите 500₽",
+        "category": "Банковские карты"
+    },
+    "card_2": {
+        "title": "T-BANK Исламская карта 700₽",
+        "link": "https://tbank.ru/baf/Ahw0N0HVPr5",
+        "description": "Оформите карту и получите 700₽",
+        "category": "Банковские карты"
+    },
+    "card_3": {
+        "title": "ALL Airlines Debit 500₽",
+        "link": "https://trk.ppdu.ru/click/dQ6F5iXw?erid=2SDnjeBaaR6",
+        "description": "Оформите карту и получите 500₽",
+        "category": "Банковские карты"
+    },
+    "card_4": {
+        "title": "T-BANK Кредитная карта Platinum 500₽",
+        "link": "https://tbank.ru/baf/7UJLwbFRVjE",
+        "description": "Оформите карту и получите 500₽",
+        "category": "Банковские карты"
+    },
+    "card_5": {
+        "title": "ПСБ Банк 'Твой Кешбэк' 700₽",
+        "link": "https://trk.ppdu.ru/click/WBiFitrR?erid=2SDnjehD1C8",
+        "description": "Оформите карту и получите 700₽",
+        "category": "Банковские карты"
+    },
+    "card_6": {
+        "title": "ВТБ Банк Кредитная карта 2000₽",
+        "link": "https://trk.ppdu.ru/click/GRSeIMLG?erid=2SDnjeGCc2T",
+        "description": "Оформите карту и получите 2000₽",
+        "category": "Банковские карты"
+    },
+    "card_7": {
+        "title": "Плати по миру Виртуальная карта USD 5000₽",
+        "link": "https://trk.ppdu.ru/click/1HeoyraF?erid=2SDnjdQghsC",
+        "description": "Оформите карту и получите 5000₽",
+        "category": "Банковские карты"
+    },
+    "card_8": {
+        "title": "Альфа-Карта с любимым кэшбэком – 4000₽",
+        "link": "https://alfabank.ru/lp/retail/dc/flexible-agent/?platformId=alfapartners_msv_DC-flexible_885537_3469097",
+        "description": "Все преимущества Альфа-Карты + любимый кэшбэк",
+        "category": "Банковские карты"
+    },
+    "card_9": {
+        "title": "Карта к Семейному счёту – 2500₽",
+        "link": "https://alfa.me/-iUM8W?url=https%3A%2F%2Fsvoy.alfabank.ru%2Fapi%2Fsso%2Fproxy%3Fproduct_id%3DSK%26id%3D885537&id=885537",
+        "description": "Карта для семейного счёта Альфа-Банка",
+        "category": "Банковские карты"
+    },
+    "card_10": {
+        "title": "Кредитная карта 60 дней без % – 8500₽",
+        "link": "https://alfabank.ru/get-money/credit-cards/land/60-days-partners/?platformId=alfapartners_msv_CC-60_885537_3469224",
+        "description": "Бесплатное обслуживание и кэшбэк",
+        "category": "Банковские карты"
+    },
+    "card_11": {
+        "title": "Детская карта – 3500₽",
+        "link": "https://alfabank.ru/make-money/investments/brokerskij-schyot/?platformId=alfapartners_msv_DC-childcard_885537_3469164",
+        "description": "Карта для ребёнка от 6 до 14 лет",
+        "category": "Банковские карты"
+    },
+    "credit_1": {
+        "title": "Альфа-Банк Кредит наличными 5000₽",
+        "link": "https://alfabank.ru/get-money/credit/credit-cash/welcome/?platformId=alfapartners_msv_PIL-PIL_885537_4921952",
+        "description": "Оформите кредит и получите 5000₽",
+        "category": "Кредиты"
+    },
+    "credit_2": {
+        "title": "Кредит на большие планы 2500₽",
+        "link": "https://alfabank.ru/get-money/credit/credit-cash/form-online-pod-zalog/?platformId=alfapartners_msv_PIMB_885537_0",
+        "description": "Оформите кредит и получите 2500₽",
+        "category": "Кредиты"
+    },
+    "credit_3": {
+        "title": "Ипотека 250 000₽",
+        "link": "https://alfa.me/y-6Bns?url=https%3A%2F%2Fipoteka.alfabank.ru%2Fam",
+        "description": "Оформите ипотеку и получите 250 000₽",
+        "category": "Кредиты"
+    },
+    "credit_4": {
+        "title": "Предодобренный кредит 25 000₽",
+        "link": "https://alfa.me/0WwZ1h?url=https%3A%2F%2Fweb.alfabank.ru%2Fupsale-credits%2Fcredits%2FRP",
+        "description": "Получите предодобренный кредит на 25 000₽",
+        "category": "Кредиты"
+    },
+    "insur_1": {
+        "title": "Zetta — спортсмены 1000₽",
+        "link": "https://trk.ppdu.ru/click/Z07fQfwV?erid=2SDnje1GhqB",
+        "description": "Оформите страховку и получите 1000₽",
+        "category": "Страхование"
+    },
+    "insur_2": {
+        "title": "Zetta школьники",
+        "link": "https://trk.ppdu.ru/click/jKAsGV7v?erid=2SDnjdoXrY9",
+        "description": "Оформите страховку для школьников",
+        "category": "Страхование"
+    },
+    "insur_3": {
+        "title": "Сберстрахование 2500₽",
+        "link": "https://trk.ppdu.ru/click/uROD6qbL?erid=2SDnjeitzV5",
+        "description": "Оформите страховку и получите 2500₽",
+        "category": "Страхование"
+    },
+    "insur_4": {
+        "title": "Т-Страхование ВЗР/Недвижимость",
+        "link": "https://trk.ppdu.ru/click/88PEHkIJ?erid=2SDnjf1Gc5U",
+        "description": "Оформите страховку ВЗР или недвижимости",
+        "category": "Страхование"
+    },
+    "estate_1": {
+        "title": "Яндекс.Аренда — 30 000₽",
+        "link": "https://arenda.yandex.ru/referral/G1XEQDX490/promocode/",
+        "description": "Сдайте или снимите жилье и получите 30 000₽",
+        "category": "Недвижимость"
+    },
+    "tour_1": {
+        "title": "AVIASALES — 5000₽",
+        "link": "https://trk.ppdu.ru/click/HnqEhAGs?erid=2VtzqvwYBcc",
+        "description": "Купите билеты и получите 5000₽",
+        "category": "Туризм"
+    },
+    "tour_2": {
+        "title": "Яндекс.Путешествия — 3000₽",
+        "link": "https://trk.ppdu.ru/click/APUFJ8oK?erid=2SDnjezfxS3",
+        "description": "Забронируйте и получите 3000₽",
+        "category": "Туризм"
+    },
+    "tour_3": {
+        "title": "KIWITAXI — 5000₽",
+        "link": "https://trk.ppdu.ru/click/HdFuG4Xi?erid=2VtzqumW7vm",
+        "description": "Закажите трансфер и получите 5000₽",
+        "category": "Туризм"
+    },
+    "biz_1": {
+        "title": "Регистрация бизнеса 25 000₽",
+        "link": "https://alfabank.ru/sme/start/partner/ag/?platformId=alfapartners_msv_RKOregbiz_885537_3469325",
+        "description": "Зарегистрируйте бизнес и получите 25 000₽",
+        "category": "Бизнес"
+    },
+    "biz_2": {
+        "title": "Расчётный счёт 2000₽",
+        "link": "https://alfabank.ru/sme/partner/ag/?platformId=alfapartners_msv_rko-anketa_885537_3469333",
+        "description": "Откройте расчетный счет и получите 2000₽",
+        "category": "Бизнес"
+    },
+    "biz_3": {
+        "title": "Интернет-эквайринг 15 000₽",
+        "link": "https://alfabank.ru/sme/payservice/msv-intacq/?platformId=alfapartners_msv_intacq_885537_3469340",
+        "description": "Подключите эквайринг и получите 15 000₽",
+        "category": "Бизнес"
+    },
+    "broker_1": {
+        "title": "Брокерский счёт – 12 500₽",
+        "link": "https://alfabank.ru/make-money/investments/brokerskij-schyot/?platformId=alfapartners_msv_investment-ba_885537_3469359",
+        "description": "Нужен для покупки и продажи акций, облигаций",
+        "category": "Брокерские счета"
+    },
+    "sub_1": {
+        "title": "Alfa Only Premium — 2500₽",
+        "link": "https://alfabank.ru/everyday/package/premium/?platformId=alfapartners_msv_DC-premium_885537_3469276",
+        "description": "Оформите подписку и получите 2500₽",
+        "category": "Подписки"
+    },
+    "sim_1": {
+        "title": "Альфа-Мобайл — 500₽",
+        "link": "https://alfa.me/SIM_alfapartners_msv?prefilledDataID=alfapartnersmsv_885537",
+        "description": "Оформите SIM-карту и получите 500₽",
+        "category": "SIM-карты"
     }
 }
 
@@ -536,10 +761,12 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "5. Отправьте данные\n\n"
         "💳 **Пополнение баланса:**\n"
         "• Через меню '💰 Баланс'\n"
-        "• Автоматическое зачисление\n\n"
-        "🛒 **Мои покупки:**\n"
-        "• Все купленные курсы и товары\n"
-        "• Прямой доступ к материалам",
+        "• Автоматическое зачисление через ЮKассу\n\n"
+        "👤 **Профиль:**\n"
+        "• Баланс и рейтинг\n"
+        "• Мои покупки\n"
+        "• Ежедневные бонусы\n"
+        "• Реферальная система",
         reply_markup=main_menu_keyboard()
     )
 
@@ -781,10 +1008,90 @@ async def check_payment_status(update: Update, context: ContextTypes.DEFAULT_TYP
             parse_mode='Markdown'
         )
 
-# ====================== МОИ ПОКУПКИ ======================
-async def my_purchases(update: Update, context: ContextTypes.DEFAULT_TYPE):
+# ====================== ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ (ВСЕ В ОДНОМ) ======================
+async def profile_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     user_id = user.id
+    
+    # Проверяем ежедневный бонус
+    bonus, streak = check_daily_bonus(user_id)
+    
+    balance = db.get(user_id, "balance", 0)
+    completed_tasks = len(db.get_list(user_id, "completed_tasks"))
+    referrals = db.get_list(user_id, "referrals")
+    achievements = db.get_list(user_id, "achievements")
+    transactions = db.get_list(user_id, "transactions")
+    rating = get_user_rating(user_id)
+    
+    # Получаем все купленные курсы
+    purchased_courses = []
+    for course_id in COURSES:
+        if db.has(user_id, f"course_{course_id}"):
+            purchased_courses.append(course_id)
+    
+    total_earned = sum([t["amount"] for t in transactions if t["amount"] > 0])
+    total_spent = abs(sum([t["amount"] for t in transactions if t["amount"] < 0]))
+    
+    text = f"👤 **ПРОФИЛЬ {user.first_name}**\n\n"
+    
+    # Баланс
+    text += f"💰 **Баланс:** {balance}₽\n"
+    text += f"📊 Заработано всего: {total_earned}₽\n"
+    text += f"💸 Потрачено всего: {total_spent}₽\n\n"
+    
+    # Ежедневный бонус
+    if bonus is not None:
+        text += f"🎁 **Ежедневный бонус:** {bonus}₽ ✅\n"
+    text += f"🔥 **Стрик бонусов:** {streak} дней\n\n"
+    
+    # Статистика
+    text += f"✅ **Выполнено заданий:** {completed_tasks}\n"
+    text += f"🤝 **Приглашено друзей:** {len(referrals)}\n"
+    text += f"🏆 **Достижений:** {len(achievements)}\n"
+    text += f"⭐ **Рейтинг:** {rating} очков\n\n"
+    
+    # Реферальная ссылка
+    referral_code = get_referral_code(user_id)
+    bot_info = await context.bot.get_me()
+    referral_link = f"https://t.me/{bot_info.username}?start={referral_code}"
+    text += f"🔗 **Реферальная ссылка:**\n`{referral_link}`\n\n"
+    
+    # Мои покупки
+    if purchased_courses:
+        text += "🛒 **Мои покупки:**\n"
+        for i, course_id in enumerate(purchased_courses[:3], 1):
+            course = COURSES[course_id]
+            text += f"{i}. {course['title']}\n"
+        if len(purchased_courses) > 3:
+            text += f"... и еще {len(purchased_courses) - 3}\n"
+        text += "\n"
+    
+    keyboard = [
+        [InlineKeyboardButton("📊 История операций", callback_data="history")],
+        [InlineKeyboardButton("🤝 Реферальная система", callback_data="referral_menu")],
+        [InlineKeyboardButton("🏆 Все достижения", callback_data="all_achievements")],
+        [InlineKeyboardButton("🛒 Все покупки", callback_data="all_purchases")],
+        [InlineKeyboardButton("🏆 Рейтинги", callback_data="ratings_menu")]
+    ]
+    
+    # Добавляем кнопку пополнения, если баланс низкий
+    if balance < 100:
+        keyboard.insert(0, [InlineKeyboardButton("💳 Пополнить баланс", callback_data="deposit")])
+    
+    keyboard.append([InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")])
+    
+    await update.message.reply_text(
+        text,
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode='Markdown'
+    )
+
+async def all_purchases_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    user = query.from_user
+    user_id = user.id
+    
+    await query.answer()
     
     # Получаем все купленные курсы
     purchased_courses = []
@@ -796,16 +1103,15 @@ async def my_purchases(update: Update, context: ContextTypes.DEFAULT_TYPE):
     purchases = db.get_list(user_id, "purchased_items")
     
     if not purchased_courses and not purchases:
-        await update.message.reply_text(
+        await query.edit_message_text(
             "🛒 **Мои покупки**\n\n"
             "У вас пока нет покупок.\n\n"
             "🎓 Посмотрите доступные курсы в разделе '🎓 Курсы'",
-            reply_markup=main_menu_keyboard(),
             parse_mode='Markdown'
         )
         return
     
-    text = "🛒 **Мои покупки**\n\n"
+    text = "🛒 **Все мои покупки**\n\n"
     
     if purchased_courses:
         text += "🎓 **Купленные курсы:**\n\n"
@@ -830,9 +1136,9 @@ async def my_purchases(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 date = datetime.fromisoformat(purchase["date"]).strftime("%d.%m.%Y")
                 text += f"• {date} - {purchase['description']} - {purchase['amount']}₽\n"
         
-        keyboard.append([InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")])
+        keyboard.append([InlineKeyboardButton("◀️ Назад в профиль", callback_data="profile_menu")])
         
-        await update.message.reply_text(
+        await query.edit_message_text(
             text,
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode='Markdown'
@@ -846,10 +1152,10 @@ async def my_purchases(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         keyboard = [
             [InlineKeyboardButton("🎓 Смотреть курсы", callback_data="courses_menu")],
-            [InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")]
+            [InlineKeyboardButton("◀️ Назад в профиль", callback_data="profile_menu")]
         ]
         
-        await update.message.reply_text(
+        await query.edit_message_text(
             text,
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode='Markdown'
@@ -865,7 +1171,7 @@ async def open_course(update: Update, context: ContextTypes.DEFAULT_TYPE, course
     
     keyboard = [
         [InlineKeyboardButton("🎬 Открыть плейлист YouTube", url=course["youtube_playlist"])],
-        [InlineKeyboardButton("⬅️ Назад к покупкам", callback_data="back_to_purchases")]
+        [InlineKeyboardButton("⬅️ Назад к покупкам", callback_data="all_purchases")]
     ]
     
     await query.edit_message_text(
@@ -1061,110 +1367,6 @@ async def referral_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
-# ====================== ЕЖЕДНЕВНЫЕ БОНУСЫ ======================
-async def daily_bonus(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user = update.effective_user
-    user_id = user.id
-    
-    bonus, streak = check_daily_bonus(user_id)
-    
-    if bonus is None:
-        streak = db.get(user_id, "daily_streak", 0)
-        balance = db.get(user.id, "balance", 0)
-        
-        text = "🎁 **Ежедневный бонус**\n\n"
-        text += "❌ Вы уже получили бонус сегодня!\n\n"
-        text += f"🔥 Стрик: {streak} дней подряд\n"
-        text += f"💰 Ваш баланс: {balance}₽\n\n"
-        text += "⏰ Приходите завтра за новым бонусом!"
-    else:
-        balance = db.get(user.id, "balance", 0)
-        
-        text = "🎁 **Ежедневный бонус**\n\n"
-        text += f"✅ Вы получили {bonus}₽!\n\n"
-        text += f"🔥 Стрик: {streak} дней подряд\n"
-        text += f"💰 Ваш баланс: {balance}₽\n\n"
-        
-        if streak >= 7:
-            text += "🌟 Отличный стрик! Продолжайте в том же духе!\n"
-        elif streak >= 3:
-            text += "💪 Хороший стрик! Не останавливайтесь!\n"
-        
-        text += "\n💡 Чем больше дней подряд, тем больше бонус!"
-        
-        new_achievements = check_achievements(user_id)
-        if new_achievements:
-            text += "\n\n🎉 **Новые достижения:**\n"
-            for ach in new_achievements:
-                text += f"✅ {ach}\n"
-    
-    keyboard = [
-        [InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")]
-    ]
-    
-    await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
-
-# ====================== ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ ======================
-async def profile_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user = update.effective_user
-    user_id = user.id
-    
-    balance = db.get(user_id, "balance", 0)
-    completed_tasks = len(db.get_list(user_id, "completed_tasks"))
-    referrals = db.get_list(user_id, "referrals")
-    achievements = db.get_list(user_id, "achievements")
-    streak = db.get(user_id, "daily_streak", 0)
-    transactions = db.get_list(user_id, "transactions")
-    rating = get_user_rating(user_id)
-    
-    total_earned = sum([t["amount"] for t in transactions if t["amount"] > 0])
-    total_spent = abs(sum([t["amount"] for t in transactions if t["amount"] < 0]))
-    
-    text = f"👤 **Профиль {user.first_name}**\n\n"
-    text += f"⭐ Рейтинг: {rating} очков\n"
-    text += f"💰 Баланс: {balance}₽\n"
-    text += f"📊 Всего заработано: {total_earned}₽\n"
-    text += f"💸 Всего потрачено: {total_spent}₽\n\n"
-    text += f"✅ Выполнено заданий: {completed_tasks}\n"
-    text += f"🤝 Приглашено друзей: {len(referrals)}\n"
-    text += f"🔥 Стрик ежедневных бонусов: {streak} дней\n"
-    text += f"🏆 Достижений: {len(achievements)}\n\n"
-    
-    if achievements:
-        text += "**Ваши достижения:**\n"
-        achievement_names = {
-            "first_task": "🎯 Первое задание",
-            "task_beginner": "🌱 Новичок",
-            "task_pro": "⭐ Профи заданий",
-            "task_master": "🏆 Мастер заданий",
-            "wealthy": "💴 Состоятельный",
-            "rich": "💵 Богач",
-            "millionaire": "💰 Миллионер",
-            "referral_pro": "🤝 Реферальный профи",
-            "referral_king": "👑 Король рефералов",
-            "shopper": "🛒 Шопоголик",
-            "investor": "📈 Инвестор"
-        }
-        for ach in achievements:
-            text += f"✅ {achievement_names.get(ach, ach)}\n"
-        text += "\n"
-    
-    referral_code = get_referral_code(user_id)
-    bot_info = await context.bot.get_me()
-    referral_link = f"https://t.me/{bot_info.username}?start={referral_code}"
-    
-    text += f"🔗 Реферальная ссылка:\n{referral_link}\n"
-    
-    keyboard = [
-        [InlineKeyboardButton("📊 История операций", callback_data="history")],
-        [InlineKeyboardButton("🤝 Реферальная система", callback_data="referral_menu")],
-        [InlineKeyboardButton("🏆 Все достижения", callback_data="all_achievements")],
-        [InlineKeyboardButton("🏆 Рейтинги", callback_data="ratings_menu")],
-        [InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")]
-    ]
-    
-    await update.message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
-
 async def all_achievements_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -1204,7 +1406,7 @@ async def all_achievements_menu(update: Update, context: ContextTypes.DEFAULT_TY
     
     await query.edit_message_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode='Markdown')
 
-# ====================== КУРСЫ ======================
+# ====================== КУРСЫ (БЕЗ ПРЕДПРОСМОТРА) ======================
 async def courses_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = []
     for course_id, course in COURSES.items():
@@ -1215,8 +1417,7 @@ async def courses_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
         ])
     
-    keyboard.append([InlineKeyboardButton("🛒 Мои покупки", callback_data="my_purchases")])
-    keyboard.append([InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")])
+    keyboard.append([InlineKeyboardButton("◀️ Главное меню", callback_data="main_menu")])
     
     await update.message.reply_text(
         "🎓 **Доступные курсы:**\n\n"
@@ -1244,7 +1445,6 @@ async def buy_course(update: Update, context: ContextTypes.DEFAULT_TYPE, course_
         
         keyboard = [
             [InlineKeyboardButton("🎬 Открыть плейлист", url=course["youtube_playlist"])],
-            [InlineKeyboardButton("🛒 Мои покупки", callback_data="my_purchases")],
             [InlineKeyboardButton("◀️ Назад к курсам", callback_data="back_to_courses")]
         ]
         
@@ -1298,7 +1498,6 @@ async def buy_course(update: Update, context: ContextTypes.DEFAULT_TYPE, course_
         
         keyboard = [
             [InlineKeyboardButton("🎬 Открыть плейлист", url=course["youtube_playlist"])],
-            [InlineKeyboardButton("🛒 Мои покупки", callback_data="my_purchases")],
             [InlineKeyboardButton("🎓 Другие курсы", callback_data="back_to_courses")]
         ]
         
@@ -1337,6 +1536,98 @@ async def buy_course(update: Update, context: ContextTypes.DEFAULT_TYPE, course_
         )
 
 # ====================== ОБРАБОТКА МЕНЮ ======================
+async def show_tasks(message):
+    keyboard = [
+        [InlineKeyboardButton("Лендинг с заданиями", callback_data="task_1")],
+        [InlineKeyboardButton("Яндекс.Браузер ПК", callback_data="task_2")],
+        [InlineKeyboardButton("Яндекс.Браузер смартфон", callback_data="task_3")],
+        [InlineKeyboardButton("Яндекс.Поиск", callback_data="task_4")],
+        [InlineKeyboardButton("Приложение с Алисой", callback_data="task_5")]
+    ]
+    await message.reply_text("🏆 Задания Яндекса:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_jobs(message):
+    keyboard = [
+        [InlineKeyboardButton("Яндекс.Курьер", callback_data="job_1")],
+        [InlineKeyboardButton("Партнёр Альфа-Банк", callback_data="job_2")],
+        [InlineKeyboardButton("Брокер Альфа-Банк", callback_data="job_3")]
+    ]
+    await message.reply_text("💼 Работа:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_cards(message):
+    keyboard = [
+        [InlineKeyboardButton("T-BANK Black 500₽", callback_data="card_1")],
+        [InlineKeyboardButton("T-BANK Исламская 700₽", callback_data="card_2")],
+        [InlineKeyboardButton("ALL Airlines 500₽", callback_data="card_3")],
+        [InlineKeyboardButton("T-BANK Platinum 500₽", callback_data="card_4")],
+        [InlineKeyboardButton("ПСБ Кешбэк 700₽", callback_data="card_5")],
+        [InlineKeyboardButton("ВТБ Кредитная 2000₽", callback_data="card_6")],
+        [InlineKeyboardButton("Плати по миру 5000₽", callback_data="card_7")],
+        [InlineKeyboardButton("Альфа-Карта 4000₽", callback_data="card_8")],
+        [InlineKeyboardButton("Семейный счёт 2500₽", callback_data="card_9")],
+        [InlineKeyboardButton("60 дней без % 8500₽", callback_data="card_10")],
+        [InlineKeyboardButton("Детская карта 3500₽", callback_data="card_11")]
+    ]
+    await message.reply_text("💳 Банковские карты:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_credits(message):
+    keyboard = [
+        [InlineKeyboardButton("Кредит наличными 5000₽", callback_data="credit_1")],
+        [InlineKeyboardButton("Кредит на планы 2500₽", callback_data="credit_2")],
+        [InlineKeyboardButton("Ипотека 250 000₽", callback_data="credit_3")],
+        [InlineKeyboardButton("Предодобренный 25 000₽", callback_data="credit_4")]
+    ]
+    await message.reply_text("💰 Кредиты:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_insurance(message):
+    keyboard = [
+        [InlineKeyboardButton("Zetta спортсмены 1000₽", callback_data="insur_1")],
+        [InlineKeyboardButton("Zetta школьники", callback_data="insur_2")],
+        [InlineKeyboardButton("Сберстрахование 2500₽", callback_data="insur_3")],
+        [InlineKeyboardButton("Т-Страхование", callback_data="insur_4")]
+    ]
+    await message.reply_text("🛡 Страхование:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_real_estate(message):
+    keyboard = [
+        [InlineKeyboardButton("Яндекс.Аренда 30 000₽", callback_data="estate_1")]
+    ]
+    await message.reply_text("🏠 Недвижимость:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_tourism(message):
+    keyboard = [
+        [InlineKeyboardButton("AVIASALES 5000₽", callback_data="tour_1")],
+        [InlineKeyboardButton("Яндекс.Путешествия 3000₽", callback_data="tour_2")],
+        [InlineKeyboardButton("KIWITAXI 5000₽", callback_data="tour_3")]
+    ]
+    await message.reply_text("✈️ Туризм:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_business(message):
+    keyboard = [
+        [InlineKeyboardButton("Регистрация бизнеса 25 000₽", callback_data="biz_1")],
+        [InlineKeyboardButton("Расчётный счёт 2000₽", callback_data="biz_2")],
+        [InlineKeyboardButton("Интернет-эквайринг 15 000₽", callback_data="biz_3")]
+    ]
+    await message.reply_text("🏢 Бизнес:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_brokerage(message):
+    keyboard = [
+        [InlineKeyboardButton("Брокерский счёт 12 500₽", callback_data="broker_1")]
+    ]
+    await message.reply_text("📊 Брокерские счета:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_subscriptions(message):
+    keyboard = [
+        [InlineKeyboardButton("Alfa Only Premium 2500₽", callback_data="sub_1")]
+    ]
+    await message.reply_text("🌟 Подписки:", reply_markup=InlineKeyboardMarkup(keyboard))
+
+async def show_sim_cards(message):
+    keyboard = [
+        [InlineKeyboardButton("Альфа-Мобайл 500₽", callback_data="sim_1")]
+    ]
+    await message.reply_text("📱 SIM-карты:", reply_markup=InlineKeyboardMarkup(keyboard))
+
 async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
     
@@ -1366,14 +1657,8 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await courses_menu(update, context)
     elif text == "💰 Баланс":
         await balance_menu(update, context)
-    elif text == "🎁 Ежедневный бонус":
-        await daily_bonus(update, context)
     elif text == "👤 Профиль":
         await profile_menu(update, context)
-    elif text == "🏆 Рейтинги":
-        await ratings_menu(update, context)
-    elif text == "🛒 Мои покупки":
-        await my_purchases(update, context)
     elif text == "📞 Связь с админом":
         await update.message.reply_text(
             f"📞 Связь с администратором:\n\n"
@@ -1385,9 +1670,6 @@ async def handle_main_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "• Предложения по улучшению",
             reply_markup=main_menu_keyboard()
         )
-
-# [ВСТАВЬТЕ ЗДЕСЬ ВСЕ ФУНКЦИИ show_tasks, show_jobs и т.д. ИЗ ВАШЕГО ПРЕДЫДУЩЕГО КОДА]
-# [Эти функции остаются без изменений, поэтому я их пропускаю для экономии места]
 
 # ====================== ОБРАБОТКА КНОПОК ======================
 async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -1426,6 +1708,10 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await profile_menu(update_obj, context)
         return
     
+    if data == "all_purchases":
+        await all_purchases_menu(update, context)
+        return
+    
     if data == "referral_menu":
         update_obj = Update(update.update_id, message=query.message)
         await referral_menu(update_obj, context)
@@ -1434,16 +1720,6 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "ratings_menu":
         update_obj = Update(update.update_id, message=query.message)
         await ratings_menu(update_obj, context)
-        return
-    
-    if data == "my_purchases":
-        update_obj = Update(update.update_id, message=query.message)
-        await my_purchases(update_obj, context)
-        return
-    
-    if data == "back_to_purchases":
-        update_obj = Update(update.update_id, message=query.message)
-        await my_purchases(update_obj, context)
         return
     
     if data == "all_achievements":
@@ -1486,7 +1762,6 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         keyboard = [
             [InlineKeyboardButton(f"🛒 Купить за {course['price']}₽", callback_data=f"buy_{course_id}")],
-            [InlineKeyboardButton("🎬 Предпросмотр", url=course["youtube_playlist"])],
             [InlineKeyboardButton("◀️ Назад к курсам", callback_data="back_to_courses")]
         ]
         
@@ -1494,8 +1769,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"🎓 **{course['title']}**\n\n"
             f"💰 Цена: {course['price']}₽\n"
             f"📚 Описание: {course['description']}\n\n"
-            f"🎬 **Полный плейлист на YouTube:**\n"
-            f"{course['youtube_playlist']}\n\n"
+            f"🎬 **После покупки вы получите доступ к полному плейлисту на YouTube.**\n\n"
             "Выберите действие:",
             reply_markup=InlineKeyboardMarkup(keyboard),
             parse_mode='Markdown'
@@ -1512,8 +1786,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 )
             ])
         
-        keyboard.append([InlineKeyboardButton("🛒 Мои покупки", callback_data="my_purchases")])
-        keyboard.append([InlineKeyboardButton("🏠 Главное меню", callback_data="main_menu")])
+        keyboard.append([InlineKeyboardButton("◀️ Главное меню", callback_data="main_menu")])
         
         await query.edit_message_text(
             "🎓 **Доступные курсы:**\n\n"
@@ -1675,8 +1948,7 @@ def main():
         print(f"🎓 Курсов: {len(COURSES)}")
         print(f"👤 Админ: {ADMIN_USERNAME}")
         print(f"💳 ЮKасса: ✅ Активна")
-        print(f"🛒 Мои покупки: ✅ Добавлено")
-        print(f"🏆 Рейтинги: ✅ Добавлено")
+        print(f"👤 Профиль: ✅ Все в одном")
         print("=" * 60)
     
     except Exception as e:
